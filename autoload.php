@@ -15,3 +15,8 @@ foreach ($envs as $env):
         include($path);
     endif;
 endforeach;
+
+function logError($data)
+{
+    file_put_contents("error.log",$data);
+}

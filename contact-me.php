@@ -29,6 +29,6 @@ try{
 }
 catch (Exception $e)
 {
-
+    logError($e->getMessage()."::".$e->getFile()."::".$e->getLine());
 }
 echo json_encode(false);
