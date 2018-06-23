@@ -1,5 +1,6 @@
+<?php include "autoload.php";?>
 <!DOCTYPE html>
-<html>
+<html >
 <head>
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
@@ -8,6 +9,10 @@
     <link rel="stylesheet" href="css/main.css">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta charset="UTF-8">
+
+    <meta name="Description" content="<?php echo $_ENV["site"]["description"]?>">
+    <meta name="distribution" content="Global">
+    <meta name="Robots" content="INDEX,FOLLOW">
 
 
 
@@ -48,12 +53,24 @@
                         suffix: '.json'
                     }]
             });
-            $translateProvider.preferredLanguage('es');
+            $translateProvider.preferredLanguage('en');
+
+
         }]);
 
         var max_messages = 150;
 
-        app.controller('home-controller', function($scope,$window) {
+        app.controller('home-controller', function($scope,$window,$translate) {
+            $translate.use('<?php echo $_ENV["lang"]; ?>');
+            $scope.focusIn=function () {
+
+                document.body.classList.add("in-focus");
+
+            }
+            $scope.focusOut=function () {
+
+                document.body.classList.remove("in-focus");
+            }
 
 
             $scope.loadMessages=function () {
@@ -158,8 +175,6 @@
 
 <nav class="float-left">
     <a class="logo">
-        <!--
-        <img src="https://png.pngtree.com/element_our/md/20180301/md_5a9797d574aa7.png">-->
     </a>
     <a class="logo-title">Whagen</a>
     <a class="logo-slogan">

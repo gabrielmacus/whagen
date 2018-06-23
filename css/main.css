@@ -121,6 +121,10 @@ nav a{
     {
         height: calc(100% - 40px);
     }
+    .whatsapp-generator
+    {
+
+    }
     .whatsapp-generator h2
     {
        display: none;
@@ -144,6 +148,13 @@ nav a{
         width: 25px!important;
     }
 
+    .whatsapp-generator{
+        bottom: -10px;
+    }
+    body.in-focus .contact-button,body.in-focus nav
+    {
+        display: none;
+    }
 }
 
 
@@ -399,3 +410,10 @@ nav .logo
      font-size: 18px;
      line-height: 20px;
  }
+.hint
+{
+    font-weight: 600;
+    font-size: 15px;
+    margin-top: 10px;
+    color: #5C258D;
+}

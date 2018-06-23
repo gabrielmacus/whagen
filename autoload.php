@@ -6,6 +6,7 @@
  * Time: 20:32
  */
 
+$_ENV["lang"]=substr($_SERVER['HTTP_ACCEPT_LANGUAGE'], 0, 2);
 
 $envs = ["production","development"];
 
@@ -16,7 +17,9 @@ foreach ($envs as $env):
     endif;
 endforeach;
 
-function logError($data)
+$langPath = __DIR__."/lang/{$_ENV["lang"]}.php";
+if(!file_exists($langPath))
 {
-    file_put_contents("error.log",$data);
+ $langPath =  __DIR__."/lang/en.php";
 }
+include ($langPath);

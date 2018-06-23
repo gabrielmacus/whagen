@@ -5,11 +5,11 @@
 
     <div data-ng-show="!formSent">
         <div class="form-field float-left">
-            <input data-ng-model="contact.email"  class="float-left">
+            <input  data-ng-focus="focusIn()" data-ng-blur="focusOut()" data-ng-model="contact.email"  class="float-left">
             <label class="float-left">{{'Email o Whatsapp' | translate}}</label>
         </div>
         <div class="form-field float-left">
-            <input data-ng-model="contact.text" class="float-left">
+            <input  data-ng-focus="focusIn()" data-ng-blur="focusOut()" data-ng-model="contact.text" class="float-left">
             <label class="float-left">{{'Mensaje' | translate}}</label>
         </div>
 
