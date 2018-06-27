@@ -67,7 +67,10 @@ nav a{
     box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
 }
 .whatsapp-generator
-{    box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+{
+    float: left;
+    width: 100%;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
     transition: all 0.3s cubic-bezier(.25,.8,.25,1);
     margin: auto;
     width: 30%;padding: 15px;
@@ -76,6 +79,10 @@ nav a{
 }
 @media all and (max-width:768px) {
 
+    .banner-c
+    {
+        display: none!important;
+    }
    .whatsapp-generator
    {
        width: 60%;
@@ -83,6 +90,10 @@ nav a{
 }
 
 @media all and (max-width:600px) {
+    .banner-a
+    {
+        display: none!important;
+    }
     .contact-button
     {
         bottom: 60px!important;
@@ -151,10 +162,50 @@ nav a{
     .whatsapp-generator{
         bottom: -10px;
     }
+
+    body.in-focus [data-ng-view]
+    {
+        align-items: inherit!important;
+    }
+
     body.in-focus .contact-button,body.in-focus nav
     {
         display: none;
     }
+
+    body.in-focus .whatsapp-generator{
+        width: 100%;
+        top: 0;
+        margin: 0;
+        bottom: inherit;
+    }
+    body.in-focus .submit-message
+    {
+        position: fixed;
+        bottom: 0;
+        /* right: 0; */
+        left: 0;
+    }
+
+
+
+}
+@media all and (max-height: 500px)
+{
+    .contact-button
+    {
+        font-size: 14px;
+        bottom: 10px!important;
+        /* right: 25px!impor0tant; */
+    }
+    .contact-button img
+    {
+        width: 20px!important;
+    }
+    .logo-slogan
+    {display: none;
+    }
+
 }
 
 
@@ -208,7 +259,7 @@ nav a{
     margin-top: 20px;
 
 }
-.submit button
+.submit button,.submit input
 {
     color: white;
     background:  #6441A5;
@@ -221,13 +272,13 @@ nav a{
     font-weight: 600;
     outline: 0;
 }
-.submit button:hover
+.submit button:hover,.submit input:hover
 {
 
     background: #4389A2;
     box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
 }
-.submit button:active
+.submit button:active,.submit input:active
 {
     box-shadow: none;
 }
@@ -236,7 +287,7 @@ nav a{
     font-size: 16px;
     font-weight: 400;}
 
-input:hover + label + .bottom-message,button:hover  + .bottom-message
+input:hover + label + .bottom-message,button:hover  + .bottom-message,input:hover +.bottom-message
 {
     opacity: 1;
 }
@@ -253,7 +304,7 @@ input:hover + label + .bottom-message,button:hover  + .bottom-message
     color: white;
     padding: 5px;
 }
-button[disabled]
+button[disabled],input[disabled]
 {
 
     opacity: 0.5;
@@ -417,3 +468,96 @@ nav .logo
     margin-top: 10px;
     color: #5C258D;
 }
+.banner-a
+{
+    text-align: center;
+    display: flex;
+    align-items: center;
+    width: 320px;
+    float: left;
+    height: 100px;
+    background: #212121;
+    z-index: 22222;
+    position: absolute;
+    bottom: 25px;
+    left: calc(50% - 320px / 2);
+}
+.banner-a:empty:after
+{
+    content: 'Banner a';
+    color: white;
+    margin: auto;
+}
+
+.banner-b
+{
+    box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+    text-align: center;
+    display: flex;
+    align-items: center;
+    width: 320px;
+    float: left;
+    height: 50px;
+    background: #212121;
+    z-index: 22222;
+    position: absolute;
+    top:63px;
+    left: calc(50% - 320px / 2);
+}
+.banner-b:empty:after
+{
+    content: 'Banner b';
+    color: white;
+    margin: auto;
+}
+
+.banner-c
+{
+    text-align: center;
+    display: flex;
+    align-items: center;
+    width: 250px;
+    float: left;
+    height: 250px;
+    background: #212121;
+    z-index: 22222;
+    position: relative;
+    margin: auto;
+
+}
+.banner-c:empty:after
+{
+    content: 'Banner c';
+    color: white;
+    margin: auto;
+}
+.banner-c-right
+{
+    left: auto;
+    right: 0;
+}
+
+.whatsapp-generator .banner-b
+{
+    position: relative;
+    float: left;
+    top: 0;
+    /* margin-left: auto; */
+    margin-top: 20px;
+}
+
+body > aside
+{
+    position: absolute;
+    left: 0;
+    height: 100%;
+    width: calc(70%/2);
+    display: flex;
+    align-items: center;
+}
+
+[class*="banner"]
+{
+    display: none;
+}
+
