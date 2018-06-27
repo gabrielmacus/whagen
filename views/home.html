@@ -4,7 +4,7 @@
     <h2>{{'Enviá tu mensaje' | translate}}</h2>
 
     <div class="form-field float-left">
-        <input type="tel" data-ng-focus="focusIn()" data-ng-blur="focusOut()" data-ng-model="message.phone"   class="float-left">
+        <input  type="tel"  data-ng-model="message.phone"   class="float-left">
 
         <label class="float-left">{{'Teléfono' | translate}}</label>
         <span class="hint float-left">{{'Recordá que debes incluir código de país y código de area' | translate}}</span>
@@ -14,13 +14,16 @@
         </p>-->
     </div>
 
+    <!--data-ng-focus="focusIn()" data-ng-blur="focusOut()" -->
     <div class="form-field float-left">
-        <textarea  data-ng-focus="focusIn()" data-ng-blur="focusOut()" data-ng-model="message.text" rows="3" class="float-left"></textarea>
+        <textarea  data-ng-model="message.text" rows="3" class="float-left"></textarea>
         <label class="float-left">{{'Mensaje (opcional)' | translate}}</label>
     </div>
 
-    <div class="form-field submit float-left">
-        <button  data-ng-disabled="!message.phone" type="submit">{{'Enviar' | translate}}</button>
+    <div class="banner-b"></div>
+
+    <div class="submit-message form-field submit float-left">
+        <input value="{{'Enviar' | translate}}" data-ng-disabled="!message.phone" type="submit">
         <!--<p class="bottom-message">
             {{'Completá el teléfono' | translate}}
         </p>-->
